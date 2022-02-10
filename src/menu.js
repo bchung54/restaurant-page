@@ -1,8 +1,6 @@
-export const menuPage = ( () => {
+import Box from './takeout-box.png';
 
-    // Create menu page container
-    const menuPageContainer = document.createElement('div');
-    menuPageContainer.setAttribute('id', 'menu-page-container');
+export const menuPage = ( () => {
 
     // Helper Functions
     //
@@ -34,6 +32,10 @@ export const menuPage = ( () => {
 
     const load = (contentContainer) => {
 
+        // Create menu page container
+        const menuPageContainer = document.createElement('div');
+        menuPageContainer.setAttribute('id', 'menu-page-container');
+
         // Chinese Menu
         const chineseMenuContainer = createMenuContainer('chinese-menu-container');
 
@@ -46,7 +48,16 @@ export const menuPage = ( () => {
         // Chinese Menu: List
         const chineseMenuList = createMenuList(chineseDishes);
 
+        // Chinese Menu: Image
+        const imgContainer = document.createElement('div');
+        imgContainer.setAttribute('id', 'chinese-img-container');
+        const myImage = new Image();
+        myImage.src = Box;
+        myImage.setAttribute('id', 'chinese-food-img');
+        imgContainer.append(myImage);
+
         chineseMenuContainer.append(chineseMenuTitle);
+        chineseMenuContainer.append(imgContainer);
         chineseMenuContainer.append(chineseMenuList);
         
 

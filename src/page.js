@@ -6,7 +6,10 @@ export const Page = ( () => {
     const addListItems = (list, arr) => {
         for (let i = 0; i < arr.length; i++) {
             let listItem = document.createElement('li');
-            listItem.textContent = arr[i];
+            listItem.textContent = arr[i].toUpperCase();
+            listItem.setAttribute('id', arr[i] + '-tab');
+            if (i == 0) {listItem.classList.add('open-tab')}
+            else {listItem.classList.add('closed-tab')};
             list.append(listItem);
         }
         return list;
@@ -22,7 +25,7 @@ export const Page = ( () => {
         
         const navBar = document.createElement('nav');
         const list = document.createElement('ul');
-        const tabArray = ["HOME", "MENU", "CONTACT"];
+        const tabArray = ["home", "menu", "contact"];
         navBar.append(addListItems(list, tabArray));
 
         header.append(headline);

@@ -90,10 +90,10 @@ export const homePage = ( () => {
         const homeReviewsContainer = createContainer('home-container', 'home-reviews-container');
 
         const reviewsTitle = createInfoHeading("Reviews");
-        const review1 = createParagraph("Kinda good! Need a lil hot sauce, but it's kinda good tho. - Detective Carter");
-        const review2 = createParagraph("Very good. - Detective Lee");
+        const review1 = createParagraph("Kinda good! Need a lil hot sauce, but it's kinda good tho. - James Carter");
+        const review2 = createParagraph("Very good. - Inspector Lee");
 
-        const reviewsBlock = buildInfoBlock(homeReviewsContainer, reviewsTitle, review1, review2);
+        buildInfoBlock(homeReviewsContainer, reviewsTitle, review1, review2);
 
 
         // Add home containers to homepage container
