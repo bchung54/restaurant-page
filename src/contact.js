@@ -10,9 +10,16 @@ export const contactPage = ( () => {
         const inputTitle = document.createElement('h5');
         inputTitle.textContent = label;
 
-        const textInput = document.createElement('input');
+        let textInput;
+
+        if (label == "Message") {
+            textInput = document.createElement('textarea');
+        } else {
+            textInput = document.createElement('input');
+            textInput.type = 'text';
+        };
+
         textInput.classList.add('contact-input');
-        textInput.type = 'text';
         textInput.setAttribute('id', inputId);
 
         inputContainer.append(inputTitle);
@@ -49,20 +56,22 @@ export const contactPage = ( () => {
         const messageInputContainer = createInputWithContainer("Message", 'message-input');
 
         // Contact Form: Submit Button
+        const btnContainer = document.createElement('div');
+        btnContainer.classList.add('input-container');
+        btnContainer.setAttribute('id', 'btn-container');
         const submitButton = document.createElement('button');
         submitButton.setAttribute('form', 'contact-form');
         submitButton.textContent = 'SUBMIT';
-
+        btnContainer.append(submitButton);
 
         contactForm.append(contactFormTitle);
         contactForm.append(nameInputContainer);
         contactForm.append(emailInputContainer);
         contactForm.append(subjectInputContainer);
         contactForm.append(messageInputContainer);
-        contactForm.append(submitButton);
+        contactForm.append(btnContainer);
         
         contactPageContainer.append(contactForm);
-
         contentContainer.append(contactPageContainer);
     };
     

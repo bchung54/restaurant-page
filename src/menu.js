@@ -1,4 +1,5 @@
 import Box from './takeout-box.png';
+import Soul from './soul-food.jpg';
 
 export const menuPage = ( () => {
 
@@ -49,15 +50,15 @@ export const menuPage = ( () => {
         const chineseMenuList = createMenuList(chineseDishes);
 
         // Chinese Menu: Image
-        const imgContainer = document.createElement('div');
-        imgContainer.setAttribute('id', 'chinese-img-container');
-        const myImage = new Image();
-        myImage.src = Box;
-        myImage.setAttribute('id', 'chinese-food-img');
-        imgContainer.append(myImage);
+        const chineseImgContainer = document.createElement('div');
+        chineseImgContainer.classList.add('menu-img');
+        const chineseImage = new Image();
+        chineseImage.src = Box;
+        chineseImage.setAttribute('id', 'chinese-food-img');
+        chineseImgContainer.append(chineseImage);
 
         chineseMenuContainer.append(chineseMenuTitle);
-        chineseMenuContainer.append(imgContainer);
+        chineseMenuContainer.append(chineseImgContainer);
         chineseMenuContainer.append(chineseMenuList);
         
 
@@ -73,7 +74,16 @@ export const menuPage = ( () => {
         // Soul Menu: List
         const soulMenuList = createMenuList(soulDishes);
 
+        // Soul Menu: Image
+        const soulImgContainer = document.createElement('div');
+        soulImgContainer.classList.add('menu-img');
+        const soulImage = new Image();
+        soulImage.src = Soul;
+        soulImage.setAttribute('id', 'soul-food-img');
+        soulImgContainer.append(soulImage);
+
         soulMenuContainer.append(soulMenuTitle);
+        soulMenuContainer.append(soulImgContainer);
         soulMenuContainer.append(soulMenuList);
 
         menuPageContainer.append(chineseMenuContainer);

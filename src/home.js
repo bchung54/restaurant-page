@@ -93,7 +93,7 @@ export const homePage = ( () => {
         const review1 = createParagraph("Kinda good! Need a lil hot sauce, but it's kinda good tho. - James Carter");
         const review2 = createParagraph("Very good. - Inspector Lee");
 
-        buildInfoBlock(homeReviewsContainer, reviewsTitle, review1, review2);
+        const reviewsBlock = buildInfoBlock(homeReviewsContainer, reviewsTitle, review1, review2);
 
 
         // Add home containers to homepage container
