@@ -1,48 +1,44 @@
-#headline {
+@font-face {
+    font-family: EggRoll;
+    src: url(./EggRollTitle-ArRp.otf);
+}
+
+@font-face {
+    font-family: HappyGraduation;
+    src: url(./HappygraduationRegular-1G9j4.otf);
+}
+
+header {
+    background-color: rgba(88, 129, 68, 0.719);
+}
+#title {
     border: 12px solid red;
     background-color: white;
     color: red;
     text-align: center;
     padding: 28px 90px;
-    font-size: 40px;
+    font-size: 60px;
+    text-shadow: 2px 2px black;
 }
 
-body {
-    background-color:rgb(88, 129, 68);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0px;
-}
-
-ul {
+#navbar {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
-    font-size: 26px;
+    font-size: 40px;
     padding: 0;
     margin: 0;
+    margin-top: 20px;
 }
 
-li {
+#navbar > li {
+    border-top: 4px solid red;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: goldenrod;
     padding: 6px 28px;
     cursor: pointer;
-}
-
-.home-container {
-    font-size: 26px;
-    text-align: center;
-    background-color: red;
-    color: red;
-    margin: 32px;
-}
-
-.info-subcontainer {
-    border: 16px solid red;
-    background-color: white;
-    color: red;
-    flex: 1;
+    text-shadow: 2px 2px black;
 }
 
 .open-tab {
@@ -50,61 +46,119 @@ li {
     background-color: red;
 }
 
+body {
+    background-color:rgba(88, 129, 68, 0.651);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0px;
+    font-family: EggRoll, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 #content {
-    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 16px solid red;
+    width: 100vw;
 }
 
-#home-display-container {
-    margin-top:0;
+.page-content {
+    border: 2px solid red;
+    width: 60vw;
 }
 
-#home-display-container p {
+/* Home Page */
+
+#home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    background-image: url(./teahub.io-chinese-food-wallpaper-2538376.jpg);
+    background-size: cover;
+}
+
+.home-container {
+    font-size: 36px;
+    text-align: center;
+    width: 60vw;
+    background-color: rgba(255, 255, 255, 0.582);
     color: black;
-    padding: 6px;
+    margin: 32px;
+    font-family: HappyGraduation;
+    padding: 36px;
+}
+
+.button {
+    border: 4px solid red;
+    border-radius: 1.5em;
+    color: red;
+    font-family: EggRoll;
+    font-size: 38px;
+    padding: 0.2em 2em;
+    margin-top: 20px;
+}
+
+.info-subcontainer {
+    flex: 1;
 }
 
 #home-info-container {
     display: flex;
     justify-content:space-evenly;
-}
-
-#home-reviews-container {
     border: 16px solid red;
     background-color: white;
+    color: red;
 }
 
-h3.menu-title {
+h3 {
+    font-family: EggRoll;
+    font-size: 50px;
+    color: red;
+    text-shadow: 2px 2px black;
     text-align: center;
-    font-size: 36px;
 }
 
-ul.menu-list {
-    flex-direction: column;
-    text-align: left;
+hr {
+    width: 25%;
+    height: 2px;
+    background-color: red;
 }
 
-li.menu-item {
-    margin: 24px 0px;
-    padding: 0;
+/* Menu Page */
+
+#menu-content {
+    display: flex;
+    justify-content: center;
+    width: 60vw;
 }
 
 .menu-container {
     background-color: white;
     color: red;
+    height: 80vh;
     border: 16px solid red;
-    width: 60vw;
+    flex: 1;
 }
 
-.menu-img {
-    display: flex;
-    justify-content: center;
+.menu-container > * {
+    margin: 20px;
 }
 
-#chinese-food-img {
-    width: 75%;
+.menu-item {
+    border-bottom: 4px dotted red;
+    margin: 24px;
+    padding: 0;
+    font-size: 38px;
 }
 
-#contact-page-container {
+/* Contact Page */
+
+#contact-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,38 +167,65 @@ li.menu-item {
     color: red;
 }
 
-h2#contact-form-title {
-    text-align: center;
-    font-size: 36px;
+#contact-content > * {
+    margin: 20px;
 }
-
-#contact-form {
-    width: 60vw;
+ 
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 38px;
 }
 
 .input-container {
-    width: 100%;
-    margin: 12px;
+    width: 25vw;
+}
+
+#contact-page-container {
+    display: flex;
+}
+
+.form-group {
+    margin-bottom: 1em;
+    transition: all .3s;
+}
+
+.form-label {
+    font-size: 1em;
+    display: block;
+    opacity: 1;
+    transform: translateY(-1.25em);
+    transform-origin: 0 0;
+    transition: all .3s;
+    pointer-events: none;
 }
 
 .contact-input {
-    border: 2px solid red;
-    width: 95%;
-    height: 28px;
-    font-size: 24px;
-    resize: none;
+    font-family: HappyGraduation;
+    font-size: 0.8em;
+    border-color: #aaa;
+    border-style: none none solid none;
+    height: 50px;
+    width: 100%;
+    transition: all .5s;
+    z-index: -1;
 }
 
-h5 {
-    font-size: 28px;
-    margin: 4px;
+.contact-input::placeholder {
+    color: transparent;
 }
 
-#message-input {
-    height: 320px;
+.contact-input:focus {
+    outline: none;
+    border-color: red;
 }
 
-#btn-container {
-    display: flex;
-    justify-content: center;
+.form-group:focus-within {
+    transform: scale(5);
+}
+
+.contact-input:focus + .form-label,
+.contact-input:not(:placeholder-shown) + .form-label  {
+    transform: translateY(-2em) scale(.8);
 }

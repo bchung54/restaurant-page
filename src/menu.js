@@ -1,5 +1,4 @@
-import Box from './takeout-box.png';
-import Soul from './soul-food.jpg';
+import {createContainer, createh3} from './helpers.js';
 
 export const menuPage = ( () => {
 
@@ -7,17 +6,9 @@ export const menuPage = ( () => {
     //
     // Helper Function: Create menu container
     const createMenuContainer = (id) => {
-        const container = document.createElement('div');
-        container.classList.add('menu-container');
-        return container;
+        return createContainer('menu-container', id);
     };
-    // Helper Function: Create menu title
-    const createMenuTitle = (text) => {
-        const title = document.createElement('h3');
-        title.classList.add('menu-title');
-        title.textContent = text;
-        return title;
-    };
+
     // Helper Function: Create menu list from array of items
     const createMenuList = (lineItemArray) => {
         const list = document.createElement('ul');
@@ -31,65 +22,35 @@ export const menuPage = ( () => {
         return list;
     };
 
-    const load = (contentContainer) => {
+    const load = (pageContainer) => {
 
         // Create menu page container
-        const menuPageContainer = document.createElement('div');
-        menuPageContainer.setAttribute('id', 'menu-page-container');
+        const menuPageContainer = createContainer('page-content', 'menu-content');
 
         // Chinese Menu
         const chineseMenuContainer = createMenuContainer('chinese-menu-container');
-
-        // Chinese Menu: Title
-        const chineseMenuTitle = createMenuTitle("Chinese Food");
-
-        // Chinese Menu: Dish Array
-        const chineseDishes = ["Big Box of Grease", "Eel", "Camel's Hump"];
-
-        // Chinese Menu: List
+        const chineseMenuTitle = createh3("Chinese Food");
+        const chineseDishes = ["Box of Grease", "Eel", "Camel's Hump"];
         const chineseMenuList = createMenuList(chineseDishes);
 
-        // Chinese Menu: Image
-        const chineseImgContainer = document.createElement('div');
-        chineseImgContainer.classList.add('menu-img');
-        const chineseImage = new Image();
-        chineseImage.src = Box;
-        chineseImage.setAttribute('id', 'chinese-food-img');
-        chineseImgContainer.append(chineseImage);
-
         chineseMenuContainer.append(chineseMenuTitle);
-        chineseMenuContainer.append(chineseImgContainer);
         chineseMenuContainer.append(chineseMenuList);
         
 
         // Soul Menu
         const soulMenuContainer = createMenuContainer('soul-menu-container');
-
-        // Soul Menu: Title
-        const soulMenuTitle = createMenuTitle("Soul Food");
-
-        // Soul Menu: Dish Array
+        const soulMenuTitle = createh3("Soul Food");
         const soulDishes = ["Ribs", "Wings", "Fries"];
-
-        // Soul Menu: List
         const soulMenuList = createMenuList(soulDishes);
 
-        // Soul Menu: Image
-        const soulImgContainer = document.createElement('div');
-        soulImgContainer.classList.add('menu-img');
-        const soulImage = new Image();
-        soulImage.src = Soul;
-        soulImage.setAttribute('id', 'soul-food-img');
-        soulImgContainer.append(soulImage);
-
         soulMenuContainer.append(soulMenuTitle);
-        soulMenuContainer.append(soulImgContainer);
         soulMenuContainer.append(soulMenuList);
 
+        // Add content to Menu Page
         menuPageContainer.append(chineseMenuContainer);
         menuPageContainer.append(soulMenuContainer);
         
-        contentContainer.append(menuPageContainer);
+        pageContainer.append(menuPageContainer);
     };
 
     return {
