@@ -8,37 +8,48 @@
     src: url(./HappygraduationRegular-1G9j4.otf);
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0px;
+    background-color:rgba(88, 129, 68, 0.651);
+    font-family: EggRoll, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Header Section */
+
 header {
     background-color: rgba(88, 129, 68, 0.719);
 }
+
 #title {
+    padding: 28px 90px;
     border: 12px solid red;
     background-color: white;
     color: red;
-    text-align: center;
-    padding: 28px 90px;
     font-size: 60px;
+    text-align: center;
     text-shadow: 2px 2px black;
 }
 
 #navbar {
-    list-style-type: none;
     display: flex;
     justify-content: space-between;
-    font-size: 40px;
-    padding: 0;
-    margin: 0;
     margin-top: 20px;
+    font-size: 40px;
+    list-style-type: none;
 }
 
 #navbar > li {
+    padding: 6px 28px;
     border-top: 4px solid red;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     color: goldenrod;
-    padding: 6px 28px;
-    cursor: pointer;
     text-shadow: 2px 2px black;
+    cursor: pointer;
 }
 
 .open-tab {
@@ -46,15 +57,7 @@ header {
     background-color: red;
 }
 
-body {
-    background-color:rgba(88, 129, 68, 0.651);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0px;
-    font-family: EggRoll, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
+/* General Page settings */
 
 #content {
     display: flex;
@@ -78,29 +81,32 @@ body {
     align-items: center;
     height: 80vh;
     width: 100vw;
+
     background-image: url(./teahub.io-chinese-food-wallpaper-2538376.jpg);
     background-size: cover;
 }
 
 .home-container {
-    font-size: 36px;
-    text-align: center;
     width: 60vw;
+    padding: 36px;
+    margin: 32px;
+
     background-color: rgba(255, 255, 255, 0.582);
     color: black;
-    margin: 32px;
+
     font-family: HappyGraduation;
-    padding: 36px;
+    font-size: 36px;
+    text-align: center;
 }
 
 .button {
+    padding: 0.2em 2em;
     border: 4px solid red;
     border-radius: 1.5em;
+    margin-top: 20px;
     color: red;
     font-family: EggRoll;
     font-size: 38px;
-    padding: 0.2em 2em;
-    margin-top: 20px;
 }
 
 .info-subcontainer {
@@ -116,16 +122,17 @@ body {
 }
 
 h3 {
+    color: red;
     font-family: EggRoll;
     font-size: 50px;
-    color: red;
-    text-shadow: 2px 2px black;
     text-align: center;
+    text-shadow: 2px 2px black;
+    
 }
 
 hr {
-    width: 25%;
     height: 2px;
+    width: 25%;
     background-color: red;
 }
 
@@ -138,11 +145,11 @@ hr {
 }
 
 .menu-container {
-    background-color: white;
-    color: red;
+    flex: 1;
     height: 80vh;
     border: 16px solid red;
-    flex: 1;
+    background-color: white;
+    color: red;
 }
 
 .menu-container > * {
@@ -152,7 +159,6 @@ hr {
 .menu-item {
     border-bottom: 4px dotted red;
     margin: 24px;
-    padding: 0;
     font-size: 38px;
 }
 
@@ -192,8 +198,8 @@ hr {
 }
 
 .form-label {
-    font-size: 1em;
     display: block;
+    font-size: 1em;
     opacity: 1;
     transform: translateY(-1.25em);
     transform-origin: 0 0;
@@ -202,14 +208,13 @@ hr {
 }
 
 .contact-input {
-    font-family: HappyGraduation;
-    font-size: 0.8em;
-    border-color: #aaa;
-    border-style: none none solid none;
     height: 50px;
     width: 100%;
+    border-color: #aaa;
+    border-style: none none solid none;
+    font-family: HappyGraduation;
+    font-size: 0.8em;
     transition: all .5s;
-    z-index: -1;
 }
 
 .contact-input::placeholder {
