@@ -1,26 +1,24 @@
-const path = require('path');
+import { resolve } from 'path';
 
-module.exports = {
-    mode: 'development',
-    entry: './src/index.js',
-    devtool: 'inline-source-map',
-    devServer: {
-        static: './dist',
-    },
-    output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist'),
-    },
-    module: {
-        rules: [
-            {
-                test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
-            },
-            {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
-            },
-        ],
-    },
+export const mode = 'development';
+export const entry = './src/index.js';
+export const devtool = 'inline-source-map';
+export const devServer = {
+	static: './dist'
+};
+export const output = {
+	filename: 'main.js',
+	path: resolve(__dirname, 'dist')
+};
+export const module = {
+	rules: [
+		{
+			test: /\.css$/i,
+			use: ['style-loader', 'css-loader']
+		},
+		{
+			test: /\.(png|svg|jpg|jpeg|gif)$/i,
+			type: 'asset/resource'
+		}
+	]
 };
